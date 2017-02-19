@@ -4,6 +4,11 @@ import struct
 from fitparse.exceptions import FitParseError, FitParseComplete
 from fitparse import records as r
 
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
+
 
 class FitFile(object):
     FILE_HEADER_FMT = '2BHI4s'
